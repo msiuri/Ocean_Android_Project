@@ -1,5 +1,6 @@
 package com.example.ocean_android_project
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -19,10 +20,12 @@ class MainActivity : AppCompatActivity() {
         val btEnviar = findViewById<Button>(R.id.btEnviar)
         val tvResultado = findViewById<TextView>(R.id.tvResultado)
         val etNome = findViewById<EditText>(R.id.etNome)
+        val brAbrirNovaTela = findViewById<Button>(R.id.btNovaTela)
 
 
 
-        //Adciona um listener para o btEnviar
+
+        //Add um listener para o btEnviar
         btEnviar.setOnClickListener {
             //Executa ao clicar no botão
             if (etNome.text.isNotEmpty() ) {
@@ -37,6 +40,15 @@ class MainActivity : AppCompatActivity() {
                 toast.show()
 
             }
+        }
+
+        //Add listener para btAbrirNovaTela
+        brAbrirNovaTela.setOnClickListener {
+            //Criamos Intent (intenção de ir dessa tela para a ResultadoActivity
+            val intentNovaTela = Intent(this, ResultadoActivity::class.java)
+
+            //Registramos a Intent passando que é uma Activity
+            startActivity(intentNovaTela)
         }
 
 
