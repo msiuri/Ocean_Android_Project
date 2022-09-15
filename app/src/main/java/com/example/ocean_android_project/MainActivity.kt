@@ -47,6 +47,9 @@ class MainActivity : AppCompatActivity() {
             //Criamos Intent (intenção de ir dessa tela para a ResultadoActivity
             val intentNovaTela = Intent(this, ResultadoActivity::class.java)
 
+            val nomeDigitado = etNome.text.toString()
+            intentNovaTela.putExtra("NOME_DIGITADO", nomeDigitado)
+
             //Registramos a Intent passando que é uma Activity
             startActivity(intentNovaTela)
         }
